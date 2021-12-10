@@ -7,7 +7,6 @@ import { ConfigContext } from 'src/context/config'
 import { NextSeo } from 'next-seo'
 import Error from 'next/error'
 import { Modal } from 'src/components/Modal'
-import { WhatIs } from 'src/components/WhatIs'
 
 interface PageProps {
 
@@ -16,32 +15,35 @@ interface PageProps {
 const Index: NextPage<PageProps> = props => {
     const [modalIsOpen, setModalIsOpen] = useState(false)
 
+    const { title, bgImage } = useContext(ConfigContext)
+
+    return <Error statusCode={404} />
     return (
         <PageLayout
             openModal={() => setModalIsOpen(true)}
         >
             <ParallaxProvider>
                 <NextSeo
-                    title={`Сайт по г.Мирный`}
+                    title={`Мастер-план ${title}`}
                     openGraph={{
-                        title: `Сайт по г.Мирный`,
+                        title: `Мастер-план ${title}`,
                         images: [
-                            { url: '/static//placeholder.jpg' },
+                            { url: bgImage },
                         ],
                     }}
                 />
 
-                {/* <Modal
+                <Modal
                     modalIsOpen={modalIsOpen}
                     setModalIsOpen={setModalIsOpen}
-                /> */}
+                />
 
                 <Hero
                     openModal={() => setModalIsOpen(true)}
                 />
 
-                <span id='whatis' />
-                <WhatIs />
+                {/* <span id='whatis' />
+                <WhatIs /> */}
 
                 {/* <span id='about' />
                 <About /> */}

@@ -12,26 +12,28 @@ const App: AppType = (props) => {
     const metrika = process.env.YANDEX_METRIKA as string
 
     return (
-        <ControlsContext.Provider
-            value={{
-                shape: 'default',
-                size: 'default',
-            }}
-        >
-            <Head>
-                <meta charSet='utf-8' />
-                <meta
-                    name='viewport'
-                    content='width=device-width, maximum-scale=1.0'
-                />
+        <ConfigContext.Provider value={defaultConfig['pavlovo']}>
+            <ControlsContext.Provider
+                value={{
+                    shape: 'default',
+                    size: 'default',
+                }}
+            >
+                <Head>
+                    <meta charSet='utf-8' />
+                    <meta
+                        name='viewport'
+                        content='width=device-width, maximum-scale=1.0'
+                    />
 
-                {true ? null : (
-                    <YMetrika number={metrika} mode={'script'} />
-                )}
-            </Head>
+                    {true ? null : (
+                        <YMetrika number={metrika} mode={'script'} />
+                    )}
+                </Head>
 
-            <Component {...pageProps} />
-        </ControlsContext.Provider>
+                <Component {...pageProps} />
+            </ControlsContext.Provider>
+        </ConfigContext.Provider>
     )
 }
 
