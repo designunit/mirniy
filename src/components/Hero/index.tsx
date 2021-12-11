@@ -51,7 +51,7 @@ export const Hero: React.FC<any> = ({ openModal }) => {
                         </p>
                     </div>
                     <Button
-                        href={'https://google.com'}
+                        href={'https://mesto.io/OOPR6D0CAYYC73M2'}
                     >
                         Заполнить Карту идей
                     </Button>
