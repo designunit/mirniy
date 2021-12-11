@@ -8,45 +8,28 @@ import { NextSeo } from 'next-seo'
 import Error from 'next/error'
 import { Modal } from 'src/components/Modal'
 import { WhatIs } from 'src/components/WhatIs'
+import Image from 'next/image'
 
 interface PageProps {
 
 }
 
 const Index: NextPage<PageProps> = props => {
-    const [modalIsOpen, setModalIsOpen] = useState(false)
 
     return (
         <PageLayout
-            openModal={() => setModalIsOpen(true)}
+            openModal={() => null}
         >
-            <ParallaxProvider>
-                <NextSeo
-                    title={`Сайт по г.Мирный`}
-                    openGraph={{
-                        title: `Сайт по г.Мирный`,
-                        images: [
-                            { url: '/static//placeholder.jpg' },
-                        ],
-                    }}
-                />
-
-                {/* <Modal
-                    modalIsOpen={modalIsOpen}
-                    setModalIsOpen={setModalIsOpen}
-                /> */}
-
-                <Hero
-                    openModal={() => setModalIsOpen(true)}
-                />
-
-                <span id='whatis' />
-                <WhatIs />
-
-                {/* <span id='about' />
-                <About /> */}
-
-            </ParallaxProvider>
+            <NextSeo
+                title={`Мирный`}
+                openGraph={{
+                    title: `Мирный`,
+                    images: [
+                        { url: '/static//bg.jpg' },
+                    ],
+                }}
+            />
+            <Hero />
         </PageLayout>
     )
 }

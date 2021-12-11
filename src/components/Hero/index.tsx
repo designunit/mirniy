@@ -3,72 +3,60 @@ import { Button } from '../Button'
 import { Title } from '../Title'
 import React, { useContext } from 'react'
 import { ConfigContext } from 'src/context/config'
-import { SectionParalaxedBack } from '../SectionParalaxedBack'
 import Image from 'next/image'
 import { Flex } from '../Flex'
+import { Section } from '../Section'
+import alrosa from '../../../public/static/alrosa.svg'
 
 export const Hero: React.FC<any> = ({ openModal }) => {
 
     return (
-        <SectionParalaxedBack
-            back={(
+        <div className={s.container}>
+            <Image
+                src={'/static/bg.jpg'}
+                layout='fill'
+                objectFit='cover'
+                priority
+                loading='eager'
+            />
+            <div className={s.alrosa}>
                 <Image
-                    src={'/static/placeholder.jpg'}
-                    layout='fill'
+                    src={alrosa}
                     objectFit='cover'
-                    priority
-                    loading='eager'
                 />
-            )}
-            contentStyle={{
-                width: '100%',
-            }}
-        >
-            <div className={s.h1}>
-                <Title>
-                    <div>
-                    {'Сайт по г.Мирный'}
-                    </div>
-                    <div>
-                        {'вот такой вот он'}
-                    </div>
-                </Title>
             </div>
 
-            <Flex
-                mobileReverse
-                style={{
-                    justifyContent: 'space-between',
-                    alignItems: 'flex-end',
-                    gap: '2rem',
-                }}
-            >
-                <div className={s.heroButtons}>
+            <div className={s.up}>
+                <div className={s.h1}>
+                    <Title>
+                        <div>
+                            {'Мирный'}
+                        </div>
+                    </Title>
+                </div>
+
+                <Flex
+                    mobileReverse
+                    className={s.text}
+                >
+                    <div className={s.description}>
+                        <p>
+                            Всем привет! Это команда развития города Мирный, сформированная при поддержке компании АЛРОСА. Мы хотим улучшить город Мирный и превратить его в самый кофортный северный город на Земле.
+                        </p>
+                        <p>
+                            Приглашаем вас принять участие в разработке концепции пространственного развития Мирного. Цель данной концепции – сформировать комплексное видение ситуации на основе которого будет проводиться масштабная работа по улучшению качества городской среды. Чем больше жителей предложат своих идей по улучшению города – тем более детальной и реализуемой получится наша концепция.
+                        </p>
+                        <p>
+                            Очень ждём ваших ответов!
+                        </p>
+                    </div>
                     <Button
                         href={'https://google.com'}
                     >
-                        Карта идей
+                        Заполнить Карту идей
                     </Button>
-                    <div className={s.buttonsSpacer} />
-                    {/* <Button
-                        theme='red'
-                        onClick={openModal}
-                    >
-                        ПРОЙТИ ОПРОС
-                    </Button> */}
-                </div>
-                <div className={s.description}>
-                    <p>
-                        Приглашаем принять участие в разработке важного документа развития Вашего города – мастер-плана.
-                    </p>
-                    <p>
-                        Цель мастер-плана – сбалансированное развитие территории города, решение его проблем и учет интересов его жителей.
-                    </p>
-                    <p>
-                        Чем больше жителей города предложит свои идеи и предложения по улучшению жизни в городе, или, наоборот, озвучит его актуальные проблемы – тем более реализуемым и полезным для каждого жителя получится итоговый документ.
-                    </p>
-                </div>
-            </Flex>
-        </SectionParalaxedBack>
+                </Flex>
+            </div>
+        </div>
     )
 }
