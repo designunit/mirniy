@@ -29,8 +29,8 @@
 
 @media screen and (max-width: 1280px) {
     .h1 {
-        font-size: 42px;
-        line-height: 46px;
+        font-size: 64px;
+        line-height: 68px;
     }
     .h2 {
         font-size: 36px;
@@ -40,13 +40,13 @@
 
 
 @media screen and (max-width: 480px) {
-    .h1 {
+    /* .h1 {
         font-size: 36px;
         line-height: 38px;
     }
     .h2 {
         font-size: 36px;
         line-height: 38px;
-    }
+    } */
 }
 

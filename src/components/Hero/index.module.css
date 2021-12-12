@@ -20,11 +20,13 @@
     flex-flow: column;
     align-items: flex-end;
     margin-right: 12rem;
+    margin-bottom: 10rem;
 }
 
 .text {
     flex-flow: column;
     gap: 2rem;
+    width: 100%;
     max-width: 400px;
     position: relative;
 }
@@ -56,6 +58,13 @@
 .h1 > h1 > div:not(:first-child) {
     font-size: 45px;
     line-height: 45px;
+}
+
+
+@media screen and (max-width: 1280px) {
+    .up {
+        margin-right: 4rem;
+    }
 }
 
 @media screen and (max-width: 480px) {
