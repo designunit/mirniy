@@ -93,4 +93,7 @@
     .sizeDefault {
         padding: 8px 24px;
     }    
+    .sizeBig {
+        font-size: 20px;
+    }
 }
