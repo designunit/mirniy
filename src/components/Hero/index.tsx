@@ -8,7 +8,7 @@ import { Flex } from '../Flex'
 import { Section } from '../Section'
 import alrosa from '../../../public/static/alrosa.svg'
 
-export const Hero: React.FC<any> = ({ openModal }) => {
+export const Hero: React.FC<{ titleText: string, description: string[] }> = ({ titleText, description }) => {
 
     return (
         <div className={s.container}>
@@ -30,7 +30,7 @@ export const Hero: React.FC<any> = ({ openModal }) => {
                 <div className={s.h1}>
                     <Title>
                         <div>
-                            {'Мирный'}
+                            {titleText}
                         </div>
                     </Title>
                 </div>
@@ -40,26 +40,7 @@ export const Hero: React.FC<any> = ({ openModal }) => {
                     className={s.text}
                 >
                     <div className={s.description}>
-                        <p>
-                            Всем привет! 
-                        </p>
-
-                        <p>
-                            Это команда развития города Мирный, сформированная при поддержке компании АЛРОСА. 
-                        </p>
-                        <p>
-                            Мы хотим улучшить город Мирный и превратить его в один из самых комфортных северных городов на Земле.
-                            Приглашаем вас принять участие в разработке концепции развития Мирного. 
-                        </p>
-                        <p>
-                            Цель данного проекта — сформировать комплексное видение, на основе которого будет проводиться масштабная работа по улучшению качества городской среды.
-                        </p>
-                        <p>
-                            Чем больше жителей предложат свои замечания и идеи по улучшению города, тем более детальной и «народной» получится наша концепция.
-                        </p>
-                        <p>
-                            Очень ждём ваши ответы!
-                        </p>
+                        {description.map((x, i) => <p key={i}> {x} </p>)}
                     </div>
                     <Button
                         href={'https://mesto.io/OOPR6D0CAYYC73M2'}
