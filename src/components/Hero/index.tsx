@@ -45,7 +45,7 @@ export const Hero: React.FC<{ titleText: string, description: string[] }> = ({ t
                     <Button
                         href={'https://mesto.io/OOPR6D0CAYYC73M2'}
                     >
-                        Заполнить Карту идей
+                        ПОСМОТРЕТЬ КАРТУ ИДЕЙ
                     </Button>
                 </Flex>
             </div>
